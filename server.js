@@ -3,6 +3,7 @@ var express = require('express'),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
   Cryptos = require('./api/models/cryptosModel'),
+  Messages = require('./api/models/messagesModel'),
   bodyParser = require('body-parser');
 
 var promise = mongoose.connect('mongodb://localhost/CryptodonDB', {
@@ -12,8 +13,10 @@ var promise = mongoose.connect('mongodb://localhost/CryptodonDB', {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./api/routes/cryptos');
-routes(app);
+var crypt = require('./api/routes/cryptos');
+var mess = require('./api/routes/messages');
+crypt(app);
+mess(app);
 
 app.listen(port);
 
