@@ -26,6 +26,7 @@
     "nodemon": "^1.12.1"
   },
   "dependencies": {
+    "blockchain.info": "^2.10.1",
     "express": "^4.16.2",
     "mongoose": "^4.13.4"
   }

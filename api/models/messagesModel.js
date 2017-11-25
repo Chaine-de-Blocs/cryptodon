@@ -20,6 +20,10 @@ var MessageSchema = new Schema({
     required: true,
     unique: true
   },
+  value: {
+    type: Number,
+    required: true
+  },
   createdAt: {
     type: Date,
     default: Date.now
