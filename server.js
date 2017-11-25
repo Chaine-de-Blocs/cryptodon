@@ -7,7 +7,7 @@ var express = require('express'),
   bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-var promise = mongoose.connect(`mongodb://${DB_HOST}`, {
+var promise = mongoose.connect(`mongodb://${process.env.DB_HOST}`, {
   useMongoClient: true
 });
 
